@@ -3,17 +3,30 @@
 * { font-family: 'Noto Sans', sans-serif; color: #333; }
 body { padding: 0 15px; }
 
+/* 'a' */
+*[button] {
+    width: 200px; display: inline-block; text-decoration: none; border: none;
+    cursor: pointer; outline: none; font-size: 1em;
+    box-sizing: content-box; text-align: center;
+}
+*[button]:hover { background-color: rgb(65, 112, 187); }
+*[button][contain=good]:hover { background-color: rgb(86, 160, 86); }
+*[button][contain=danger]:hover { background-color: rgb(189, 65, 65); }
+/* */
+
 /* 'Contain' and 'Sign' Styles */
 div[sign] { width: 350px; }
 *[contain] {
     padding: 15px 25px;
     border-radius: 7px;
     box-shadow: 0 6px 6px -6px rgba(0, 0, 0, .3);
+    background-color: rgb(77, 133, 224);
     color: white;
 }
 *[contain=good] { background-color: rgb(97, 184, 97); }
 *[contain=danger] { background-color:rgb(218, 72, 72); }
-*[contain=warning] { background-color:rgb(233, 219, 95); color: #333; }
+*[contain=alert] { background-color:rgb(238, 165, 81); }
+*[contain=warning] { background-color:rgb(250, 234, 94); color: #333; }
 *[contain=dark] { background-color:rgb(61, 61, 61) }
 *[contain=light] { background-color:#F0F0F0; color: #333; }
 *[contain=white] { background-color:white; color: #333; }
@@ -23,4 +36,10 @@ div[sign] { width: 350px; }
 *[flex] { display: flex; gap: 10px; flex-wrap: wrap; }
 *[flex=vertical] { flex-direction: column; }
 *[nowrap] { flex-wrap: nowrap; }
+/* */
+
+/* Font */
+*[bold] { font-weight: 700; }
+*[italic] { font-style: italic; }
+*[underline] { text-decoration: underline; }
 /* */
