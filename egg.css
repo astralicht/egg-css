@@ -1,39 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
 
 * { font-family: 'Noto Sans', sans-serif; color: #333; }
+html, body { margin: 0; }
 body { padding: 0 15px; }
 
 /* 'a' */
+a { text-decoration: none; color:rgb(40, 109, 219); }
+a[link]:hover { text-decoration: underline; }
+/* */
+
+/* 'Button' */
 *[button] {
-    width: 200px; display: inline-block; text-decoration: none; border: none;
+    width: 200px; display: inline-block; border: none;
     cursor: pointer; outline: none; font-size: 1em;
     box-sizing: content-box; text-align: center;
 }
-*[button]:hover { background-color: rgb(65, 112, 187); }
-*[button][contain=good]:hover { background-color: rgb(86, 160, 86); }
-*[button][contain=danger]:hover { background-color: rgb(189, 65, 65); }
+*[button]:hover, *[button]:active { background-color: rgb(65, 112, 187); }
+*[button][contain=good]:hover, *[button][contain=good]:active { background-color: rgb(86, 160, 86); }
+*[button][contain=danger]:hover, *[button][contain=danger]:active { background-color: rgb(189, 65, 65); }
+*[button][contain=alert]:hover, *[button][contain=alert]:active { background-color:rgb(219, 145, 60); }
+*[button][contain=warning]:hover, *[button][contain=warning]:active { background-color:#f0c954; color: #333; }
+*[button][contain=dark]:hover, *[button][contain=dark]:active { background-color:rgb(42, 42, 42) }
+*[button][contain=light]:hover, *[button][contain=light]:active { background-color:#dbd9d9; color: #333; }
+*[button][contain=white]:hover, *[button][contain=white]:active { background-color:#F0F0F0; color: #333; }
+*[button][contain=info]:hover, *[button][contain=info]:active { background-color: #0a8da1; }
 /* */
 
 /* 'Contain' and 'Sign' Styles */
 div[sign] { width: 350px; }
 *[contain] {
-    padding: 15px 25px;
-    border-radius: 7px;
+    padding: 15px 25px; border-radius: 7px;
     box-shadow: 0 6px 6px -6px rgba(0, 0, 0, .3);
     background-color: rgb(77, 133, 224);
-    color: white;
+    color: white; text-decoration: none;
 }
 *[contain=good] { background-color: rgb(97, 184, 97); }
 *[contain=danger] { background-color:rgb(218, 72, 72); }
 *[contain=alert] { background-color:rgb(238, 165, 81); }
-*[contain=warning] { background-color:rgb(250, 234, 94); color: #333; }
+*[contain=warning] { background-color:#ffda6d; color: #333; }
 *[contain=dark] { background-color:rgb(61, 61, 61) }
 *[contain=light] { background-color:#F0F0F0; color: #333; }
 *[contain=white] { background-color:white; color: #333; }
+*[contain=info] { background-color: #17a2b8; }
 /*   */
+
+/* 'div' */
+div { box-sizing: border-box; }
+/* */
 
 /* Flex */
 *[flex] { display: flex; gap: 10px; flex-wrap: wrap; }
+*[flex=auto] > * { flex: auto; }
 *[flex=vertical] { flex-direction: column; }
 *[nowrap] { flex-wrap: nowrap; }
 /* */
@@ -43,3 +60,8 @@ div[sign] { width: 350px; }
 *[italic] { font-style: italic; }
 *[underline] { text-decoration: underline; }
 /* */
+
+@media only screen and (max-width: 430px) {
+    *[flex=vertical] { width: 100%; }
+    *[contain], div[sign] { width: 100%; }
+}
