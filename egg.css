@@ -344,22 +344,6 @@ button:active {
     justify-content: flex-end;
 }
 
-[flex-grow=1] {
-    flex-grow: 1;
-}
-
-[flex-grow=2] {
-    flex-grow: 2;
-}
-
-[flex-shrink=1] {
-    flex-shrink: 1;
-}
-
-[flex-shrink=2] {
-    flex-shrink: 2;
-}
-
 [flex-wrap] {
     flex-wrap: wrap;
 }
@@ -710,6 +694,6 @@ hover-toggle>container>item {
     }
 
     .main-content {
-        padding: 0 1em 0 1em;
+        padding: 1em;
     }
 }
