@@ -7,16 +7,18 @@
     <title>Egg CSS</title>
 </head>
 <body>
-    <nav flex full-width v-center>
+    <nav full-width>
         <img logo src="#" alt="">
         <nav-items>
             <a nav-item href="#">Home</a>
             <a nav-item href="#">About Us</a>
             <a nav-item href="#">Contact Us</a>
         </nav-items>
-        <nav-items to-right>
-            <a nav-item href="#">Social Links</a>
-            <a nav-item href="#">Profile</a>
+        <nav-items flex="h" h-end>
+            <div>
+                <a nav-item href="#">Social Links</a>
+                <a nav-item href="#">Profile</a>
+            </div>
         </nav-items>
     </nav>
     <div main-content>
