@@ -84,26 +84,26 @@ button {
 /* Nav */
 nav {
     padding: var(--padding);
+    display: flex;
     gap: 1rem;
+    align-items: center;
 }
 
 nav img[logo] {
     height: 50px;
     width: 50px;
+    display: block;
 }
 
 nav nav-items {
-    margin: auto 0 auto 0;
+    display: inline-block;
+    flex-grow: 1;
+    display: flex;
 }
 
-nav nav-items>a[nav-item] {
+nav nav-items a[nav-item] {
     text-decoration: none;
     padding: var(--padding);
-    margin: auto 0 auto 0;
-}
-
-nav nav-items[to-right] {
-    margin: auto 0 auto auto;
 }
 
 [flex] {
