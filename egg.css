@@ -98,20 +98,12 @@ nav img[logo] {
 nav nav-items {
     display: inline-block;
     flex-grow: 1;
+    display: flex;
 }
 
 nav nav-items a[nav-item] {
     text-decoration: none;
     padding: var(--padding);
-}
-
-nav nav-items[to-right] {
-    display: flex;
-    justify-content: flex-end;
-}
-
-nav nav-items[to-right]>div {
-
 }
 
 [flex] {
