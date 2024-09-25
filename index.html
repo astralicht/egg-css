@@ -3,20 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="egg_neue.css">
+    <link rel="stylesheet" href="egg.css">
+    <style>
+        .nav-link {
+            border-bottom: 2px solid transparent;
+            transition: border-bottom .15s ease-in-out;
+        }
+
+        .nav-link:hover {
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        form#sample-form {
+            width: 450px;
+        }
+    </style>
     <title>Egg CSS ver. neue</title>
 </head>
 <body>
-    <nav flex="h" v-center>
+    <nav flex="h" v-center no-gap>
         <a href="index.html">
             <img src="banana.jpg" height="50px" width="50px">
         </a>
-        <a href="index.html"><b>Egg CSS</b></a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="index.html" pad><b>Egg CSS</b></a>
+        <a href="#" pad class="nav-link">About</a>
+        <a href="#" pad class="nav-link">Contact</a>
         <div flex="h" grow h-end>
-            <b>banana</b>
+            <a href="#" pad class="nav-link">Profile</a>
         </div>
     </nav>
+    <div pad>
+        <h1 no-margin>Egg CSS H1</h1>
+        <h2 no-margin>Egg CSS H2</h2>
+        <h3 no-margin>Egg CSS H3</h3>
+        <h4 no-margin>Egg CSS H4</h4>
+    </div>
+    <form action="#" id="sample-form" pad flex="v">
+        <h3 no-margin>Form</h3>
+        <div flex="h">
+            <div>
+                <label for="input-1">Input 1</label>
+                <input type="text" id="input-1" name="input-1" placeholder="Aa">
+            </div>
+            <div>
+                <label for="input-2">Input 2</label>
+                <input type="text" id="input-2" name="input-2" placeholder="Aa">
+            </div>
+        </div>
+        <div>
+            <label for="input-3">Input 3</label>
+            <input type="date" id="input-3" name="input-3">
+        </div>
+        <div>
+            <label for="input-4">Input 4</label>
+            <input type="number" id="input-4" name="input-4" placeholder="123">
+        </div>
+        <button type="submit" good-bg style="color: white;">Submit</button>
+    </form>
+    <div pad flex>
+        <span pad primary-bg white-fr hover>banana</span>
+        <span pad good-bg white-fr>banana</span>
+        <span pad warning-bg white-fr>banana</span>
+        <span pad alert-bg white-fr>banana</span>
+        <span pad danger-bg white-fr>banana</span>
+        <span pad darker-bg white-fr>banana</span>
+        <span pad dark-bg white-fr>banana</span>
+        <span pad secondary-bg white-fr>banana</span>
+        <span pad light-bg>banana</span>
+        <span pad white-bg>banana</span>
+    </div>
 </body>
 </html>

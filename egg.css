@@ -10,18 +10,49 @@
     --dark-color:       #333;
     --darker-color:     #222;
     --secondary-color:  #838383;
-    --light-color:      #F0F0F0;
+    --light-color:      #FAF9F6;
     --white-color:      #FFF;
 
-    --border-radius:      1rem;
+    --border-radius:      .8rem;
     --pad:                1rem 1.5rem;
+    --pad-h:              0 1.5rem;
+    --pad-v:              1.5rem 0;
     --pad-s:              0.5rem 1rem;
     --mrg:                1rem 1.5rem;
     --def-font-size:      1rem;
-    --box-shadow:         0 0 0.5rem rgba(0 0 0 / .3);
+    --box-shadow:         0 0 .3rem rgb(51 51 51 / .15);
+    --box-shadow-focus:   0 0 .3rem rgb(51 51 51 / .5);
 
     --gap:                1rem;
 }
+
+/* [-bg] { background-color: var(---color); }
+[-fr] { color: var(---color); } */
+
+/* Colors */
+[primary-bg]   { background-color: var(--primary-color); }
+[primary-fr]   { color:            var(--primary-color); }
+[info-bg]      { background-color: var(--info-color); }
+[info-fr]      { color:            var(--info-color); }
+[good-bg]      { background-color: var(--good-color); }
+[good-fr]      { color:            var(--good-color); }
+[warning-bg]   { background-color: var(--warning-color); }
+[warning-fr]   { color:            var(--warning-color); }
+[alert-bg]     { background-color: var(--alert-color); }
+[alert-fr]     { color:            var(--alert-color); }
+[danger-bg]    { background-color: var(--danger-color); }
+[danger-fr]    { color:            var(--danger-color); }
+[darker-bg]    { background-color: var(--darker-color); }
+[darker-fr]    { color:            var(--darker-color); }
+[dark-bg]      { background-color: var(--dark-color); }
+[dark-fr]      { color:            var(--dark-color); }
+[secondary-bg] { background-color: var(--secondary-color); }
+[secondary-fr] { color:            var(--secondary-color); }
+[light-bg]     { background-color: var(--light-color); }
+[light-fr]     { color:            var(--light-color); }
+[white-bg]     { background-color: var(--white-color); }
+[white-fr]     { color:            var(--white-color); }
+/*****/
 
 * {
     font-family: 'Noto Sans', sans-serif;
@@ -35,6 +66,8 @@ body {
 
 body {
     margin: 0;
+    color: var(--dark-color);
+    background-color: var(--light-color);
 }
 
 nav {
@@ -46,8 +79,16 @@ a {
     color: var(--primary-color);
 }
 
-[pad] {
+button {
+    border: none;
     padding: var(--pad);
+    background-color: var(--white-color);
+    font-size: var(--def-font-size);
+    cursor: pointer;
+}
+
+button:hover {
+    background-image: linear-gradient(rgb(0 0 0 / .15) 0 0);
 }
 
 /* Card */
@@ -61,7 +102,7 @@ card {
 /*****/
 
 /* Flex */
-[flex=h] {
+[flex] {
     display: flex;
     gap: var(--gap);
 }
@@ -109,6 +150,10 @@ card {
 [flex][no-shrink] {
     flex-shrink: 0;
 }
+
+[flex][no-gap] {
+    gap: 0;
+}
 /*****/
 
 /* Table */
@@ -136,23 +181,23 @@ select {
 /*****/
 
 /* Font/Text */
-[font-size=med] {
-    font-size: 1.5em;
+h4 {
+    font-size: 1.5rem;
 }
 
-[font-size=lrg] {
-    font-size: 2em;
+h3 {
+    font-size: 2rem;
 }
 
-[font-size=xl] {
-    font-size: 2.5em;
+h2 {
+    font-size: 2.5rem;
 }
 
-[font-size=2xl] {
-    font-size: 3em;
+h1 {
+    font-size: 3rem;
 }
 
-[no-text-decoration] {
+[no-text-decor] {
     text-decoration: none;
 }
 
@@ -170,6 +215,27 @@ select {
 
 [dark-text-all] * {
     color: var(--dark-color);
+}
+/*****/
+
+/* Form and Input */
+form input {
+    padding: var(--pad-s);
+    border: 1px solid var(--white-color);
+    outline: none;
+    transition: box-shadow .15s ease-in-out;
+    font-size: var(--def-font-size);
+    width: 100%;
+    box-shadow: var(--box-shadow);
+}
+
+form input:focus {
+    box-shadow: var(--box-shadow-focus);
+}
+
+form label {
+    display: block;
+    margin-bottom: .5rem;
 }
 /*****/
 
@@ -191,16 +257,6 @@ select {
 }
 /*****/
 
-/* Border */
-[border-radius] {
-    border-radius: var(--border-radius);
-}
-
-[no-border-radius] {
-    border-radius: 0;
-}
-/*****/
-
 /* Miscellaneous */
 [pointable] {
     cursor: pointer;
@@ -212,5 +268,29 @@ select {
 
 [box-shadow] {
     box-shadow: var(--box-shadow);
+}
+
+[border-radius] {
+    border-radius: var(--border-radius);
+}
+
+[no-border-radius] {
+    border-radius: 0;
+}
+
+[no-margin] {
+    margin: 0;
+}
+
+[pad] {
+    padding: var(--pad);
+}
+
+[pad-h] {
+    padding: 0 var(--pad-h);
+}
+
+[pad-v] {
+    padding: var(--pad-v) 0;
 }
 /*****/
