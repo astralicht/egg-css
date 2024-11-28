@@ -1,29 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
 
 :root {
-    --primary-color:    #4e8bed;
-    --info-color:       #17a2b8;
-    --good-color:       rgb(97, 184, 97);
-    --warning-color:    #f6ca46;
-    --alert-color:      rgb(238, 165, 81);
-    --danger-color:     rgb(218, 72, 72);
-    --dark-color:       #333;
-    --darker-color:     #222;
+    --primary-color:    #4E8BED;
+    --info-color:       #17A2B8;
+    --good-color:       #61B861;
+    --warning-color:    #F6CA46;
+    --alert-color:      #EEA551;
+    --danger-color:     #DA4848;
+    --dark-color:       #333333;
+    --darker-color:     #222222;
     --secondary-color:  #838383;
-    --light-color:      #FAF9F6;
-    --white-color:      #FFF;
+    --light-color:      #F0F0F0;
+    --white-color:      #FFFFFF;
 
-    --border-radius:      .8rem;
-    --pad:                1rem 1.5rem;
-    --pad-h:              0 1.5rem;
-    --pad-v:              1.5rem 0;
-    --pad-s:              0.5rem 1rem;
-    --mrg:                1rem 1.5rem;
+    --border-radius:      8px;
+    --pad:                16px;
+    --pad-h:              0 16px;
+    --pad-v:              16px 0;
+    --pad-s:              8px 16px;
+    --mrg:                16px;
     --def-font-size:      1rem;
-    --box-shadow:         0 0 .3rem rgb(51 51 51 / .15);
-    --box-shadow-focus:   0 0 .3rem rgb(51 51 51 / .5);
+    --box-shadow:         0 0 4px rgb(51 51 51 / .15);
+    --box-shadow-focus:   0 0 4px rgb(51 51 51 / .5);
 
-    --gap:                1rem;
+    --gap:                16px;
 }
 
 /* [-bg] { background-color: var(---color); }
@@ -55,7 +55,7 @@
 /*****/
 
 * {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: "Noto Sans", Arial, sans-serif;
     box-sizing: border-box;
 }
 
@@ -67,7 +67,6 @@ body {
 body {
     margin: 0;
     color: var(--dark-color);
-    background-color: var(--light-color);
 }
 
 nav {
@@ -91,11 +90,19 @@ button:hover {
     background-image: linear-gradient(rgb(0 0 0 / .15) 0 0);
 }
 
+button[disabled] {
+    background-image: linear-gradient(rgb(255 255 255 / .3) 0 0);
+    cursor: default;
+}
+
+button[disabled]:hover {
+    background-image: linear-gradient(rgb(255 255 255 / .3) 0 0);
+}
+
 /* Card */
 card {
     padding: var(--pad);
     box-shadow: var(--box-shadow);
-    border-radius: var(--border-radius);
     width: fit-content;
     display: block;
 }
@@ -131,7 +138,7 @@ card {
     justify-content: flex-end;
 }
 
-[flex-wrap] {
+[flex][wrap] {
     flex-wrap: wrap;
 }
 
@@ -158,13 +165,12 @@ card {
 
 /* Table */
 table {
-    background-color: var(--secondary-color);
+    padding: var(--pad);
 }
 
 th,
 td {
     padding: var(--pad);
-    text-align: left;
 }
 
 tr:nth-child(odd) {
@@ -181,52 +187,37 @@ select {
 /*****/
 
 /* Font/Text */
-h4 {
+h4, [medium] {
     font-size: 1.5rem;
 }
 
-h3 {
+h3, [big] {
     font-size: 2rem;
 }
 
-h2 {
+h2, [bigger] {
     font-size: 2.5rem;
 }
 
-h1 {
+h1, [biggest] {
     font-size: 3rem;
 }
 
 [no-text-decor] {
     text-decoration: none;
 }
-
-[white-text] {
-    color: var(--white-color);
-}
-
-[white-text-all] * {
-    color: var(--white-color);
-}
-
-[dark-text] {
-    color: var(--dark-color);
-}
-
-[dark-text-all] * {
-    color: var(--dark-color);
-}
 /*****/
 
 /* Form and Input */
 form input {
+    outline: none;
+    width: 100%;
     padding: var(--pad-s);
     border: 1px solid var(--white-color);
-    outline: none;
     transition: box-shadow .15s ease-in-out;
     font-size: var(--def-font-size);
-    width: 100%;
     box-shadow: var(--box-shadow);
+    background-color: var(--white-color);
 }
 
 form input:focus {
@@ -235,7 +226,7 @@ form input:focus {
 
 form label {
     display: block;
-    margin-bottom: .5rem;
+    margin-bottom: 8px;
 }
 /*****/
 
@@ -262,7 +253,7 @@ form label {
     cursor: pointer;
 }
 
-[overflow="auto"] {
+[overflow=auto] {
     overflow: auto;
 }
 
@@ -278,6 +269,10 @@ form label {
     border-radius: 0;
 }
 
+[mrg] {
+    margin: var(--mrg);
+}
+
 [no-margin] {
     margin: 0;
 }
@@ -287,10 +282,14 @@ form label {
 }
 
 [pad-h] {
-    padding: 0 var(--pad-h);
+    padding: var(--pad-h);
 }
 
 [pad-v] {
-    padding: var(--pad-v) 0;
+    padding: var(--pad-v);
+}
+
+[pad-s] {
+    padding: var(--pad-s);
 }
 /*****/
