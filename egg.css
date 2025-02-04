@@ -18,10 +18,11 @@
     --pad-h:              0 16px;
     --pad-v:              16px 0;
     --pad-s:              8px 16px;
+    --section-pad:        25px 50px;
     --mrg:                16px;
     --def-font-size:      1rem;
-    --box-shadow:         0 0 4px rgb(51 51 51 / .15);
-    --box-shadow-focus:   0 0 4px rgb(51 51 51 / .5);
+    --box-shadow:         0 0 4px rgb(51 51 51 / .25);
+    --box-shadow-focus:   0 0 0 2px rgb(78 139 237 / .75);
 
     --gap:                16px;
 }
@@ -84,10 +85,15 @@ button {
     background-color: var(--white-color);
     font-size: var(--def-font-size);
     cursor: pointer;
+    transition: .15s outline;
 }
 
 button:hover {
     background-image: linear-gradient(rgb(0 0 0 / .15) 0 0);
+}
+
+button:focus, a:focus {
+    outline: 2px solid rgb(78 139 237 / .75);
 }
 
 button[disabled] {
@@ -97,6 +103,10 @@ button[disabled] {
 
 button[disabled]:hover {
     background-image: linear-gradient(rgb(255 255 255 / .3) 0 0);
+}
+
+section {
+    padding: var(--section-pad);
 }
 
 /* Card */
